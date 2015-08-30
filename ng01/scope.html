@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div ng-app="jApp">
+        <div ng-controller="EvtController">
+        	<span>Counter : {{count}}</span>
+            <ul>
+                <li ng-repeat="i in [1]" ng-controller="EvtController">
+                    <button ng-click="$emit('incEvent')"> Emit</button>
+                    <button ng-click="$broadcast('incEvent')"> Broadcast</button>
+                    <ul>
+                        <li ng-repeat="i in [1,2]" ng-controller="EvtController">
+                            <b>Counter : {{count}}</b>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="eventCtrl.js"></script>
+
+</html>
