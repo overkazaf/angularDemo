@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="IncCtrl">
+		<div user-frag></div>
+		<div ng-bind="user"></div>
+	</div>
+	<script src="../angular.min.js"></script>
+	<script>
+		var app = angular.module('myApp',[]);
+		app.controller('IncCtrl', function ($scope, $http){
+			$scope.user = 'John';
+			$http.get('frag.html').success(function (data){
+				$scope.fragment = data;
+			});
+
+		}).directive('userFrag', function (){
+			return {
+				template : function (){
+					console.log(arguments);
+					return 'cmyk';
+				}
+			};
+		});
+	</script>
+</body>
+</html>

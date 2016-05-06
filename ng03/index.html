@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="TestCtrl">
+		<div ng-show="!flag">qwe</div>
+		<div ng-show="flag">abc</div>
+		<button ng-click="toggle()">Click Me</button>
+	</div>
+	<script src="../angular.min.js"></script>
+	<script>
+		var ngApp = angular.module('myApp', []);
+		ngApp.controller('TestCtrl', ['$scope', function ($scope){
+			$scope.flag = false;
+			$scope.toggle = function (){
+				$scope.flag = !$scope.flag;
+			};
+		}]);
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div ng-app="myApp">
+		<Nodelist></Nodelist>
+	</div>
+	<script src="../angular.min.js"></script>
+	<script>
+		var ngApp = angular.module('myApp', []);
+		ngApp.directive('nodelist', function () {
+			return {
+				restrict : 'E',
+				template : '<ul><li>asdfsfd</li><li>asdfsfd</li></ul>'
+			};
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="notepadCtrl">
+		<textarea rows="10" cols="80" ng-model="message"></textarea>
+		<div>
+			<button ng-click="save()">Save</button>
+			<button ng-click="clear()">Clear</button>
+		</div>
+		<div>You can still input <span ng-bind="left()"></span> words</div>
+	</div>
+	<script src="../angular.min.js"></script>
+	<script src="./notepad.js"></script>
+	<script src="./notepadCtrl.js"></script>
+</body>
+</html>
